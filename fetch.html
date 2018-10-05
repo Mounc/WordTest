@@ -8,10 +8,9 @@
 </head>
 <body>
   <script>
-    fetch('html').then(function(response){
+    fetch('wordSource.txt').then(function(response){
       response.text().then(function(text){
-
-        alert(text)
+        body.innerHTML = txt
       })
     })
   </script>
