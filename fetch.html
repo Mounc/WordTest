@@ -11,7 +11,7 @@
     fetch('wordSource.txt').then(function(response){
       response.text().then(function(text){
         alert("Start")
-        body.innerHTML = text
+        document.querySelector('body').innerHTML = text
       })
     })
   </script>
