@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -14,19 +14,19 @@
     }
     #next {
       font-size:100px;
-      
+
     }
   </style>
 
 </head>
 <body>
- 
+
   <p id="question"></p><br><br><br><br>
   <p id="answer"></p><br><br> <br>
   <p id="next" onclick="next()">NEXT</p>
-  
-  
-  
+
+
+
   <button type="button" name="button" onclick="print1()">Next</button><br>
   <button type="button" name="button" onclick="print2()">Answer</button>
   <script>
@@ -38,13 +38,12 @@
     ran = ran - (ran%1)
     now = data[ran]
     document.getElementById('question').innerHTML = now[1]
-    document.getElementById('answer').innerHTML = ""
+    document.getElementById('answer').innerHTML = " "
   }
   function print2() {
     document.getElementById('answer').innerHTML = now[2] + " / "
     document.getElementById('answer').innerHTML += now[3] + " / "
     document.getElementById('answer').innerHTML += now[4]
-
   }
   switch = 0
   function next() {
@@ -58,9 +57,6 @@
       document.getElementById('next').innerHTML = "NEXT"
     }
   }
-
-
-
   var output = ""
   var str = ""
   var data = []
@@ -77,7 +73,7 @@
         })
         output += "<br />"
         data.push(aData)
-
+        alert("Done")
       })
     })
   })
