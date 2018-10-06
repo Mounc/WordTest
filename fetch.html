@@ -10,13 +10,11 @@
   <script>
     fetch('wordSource').then(function(response){
       response.text().then(function(text){
-        alert("Start")
-        document.querySelector('body').innerHTML = ""
-        document.querySelector('body').innerHTML += "Enable??\n"
-        document.querySelector('body').innerHTML += "한글이 나오나요??\n"
-        document.querySelector('body').innerHTML += text
-
-      })
+        item = text.split('\n')
+        for (var i in item) {
+          document.querySelector('body').innerHTML += i + "\n"
+        }
+      }
     })
   </script>
 </body>
