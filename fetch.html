@@ -11,9 +11,10 @@
     fetch('wordSource').then(function(response){
       output = ""
       response.text().then(function(text){
-        item = text.split('\n')
-        for (var i in item) {
-          for (var x in i) {
+        items = text.split('\n')
+        for (var i in items) {
+          item = i.split('\t')
+          for (var x in item) {
             output += i + "\t"
           }
           output += "\n"
