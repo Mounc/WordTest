@@ -7,7 +7,26 @@
   <title>Document</title>
 </head>
 <body>
+  <button type="button" name="button" onclick="print()">Next</button>
+  <p id="question"></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p id="answer"></p>
   <script>
+  function print() {
+    var ran = (Math.random()*10000)%data.length
+    now = data[ran]
+    document.getElementById('question').InnerHTML = now[1]
+    document.getElementById('answer').InnerHTML = now[2] + " / "
+    document.getElementById('answer').InnerHTML += now[3] + " / "
+    document.getElementById('answer').InnerHTML += now[4]
+  }
+
+
+
   var output = ""
   var str = ""
   var data = []
@@ -24,6 +43,7 @@
         })
         output += "<br />"
         data.push(aData)
+
       })
     })
   })
