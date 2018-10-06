@@ -38,6 +38,7 @@
     ran = (Math.random()*10000)%data.length
     ran = ran - (ran%1)
     now = data[ran]
+    data.splice(ran,1)
     document.getElementById('number').innerHTML = ran
     document.getElementById('question').innerHTML = now[1]
     document.getElementById('answer').innerHTML = " "
@@ -74,7 +75,9 @@
           aData.push(x)
         })
         output += "<br />"
-        data.push(aData)
+        data.push(aData.sclice())
+        data.push(aData.sclice())
+        data.push(aData.sclice())
         document.getElementById('question').innerHTML = "Click the Start to get a Question."
       })
     })
