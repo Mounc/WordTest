@@ -26,7 +26,7 @@
   <p id="number"></p>
   <p id="question">Wait A Second</p><br><br>
   <p id="answer"></p><br>
-  <p id="next" onclick="next()">NEXT</p>
+  <p id="next" onclick="next()">START</p>
 
 
 
@@ -74,6 +74,7 @@
         })
         output += "<br />"
         data.push(aData)
+        document.getElementById('question').innerHTML = "Click the Start to get a Question."
       })
     })
   })
