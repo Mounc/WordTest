@@ -7,24 +7,30 @@
   <title>Document</title>
   <style>
     p {
-      font-size: 30px;
+      font-size: 20px;
     }
   </style>
 
 </head>
 <body>
-  <button type="button" name="button" onclick="print()">Next</button>
+  <button type="button" name="button" onclick="print()">Next</button><br>
+  <button type="button" name="button" onclick="print2()">Answer</button>
   <p id="question"></p><br><br><br><br><br><br><br><br><br>
   <p id="answer"></p>
   <script>
+  var ran = 0
+  var now
   function print() {
-    var ran = (Math.random()*10000)%data.length
+    ran = (Math.random()*10000)%data.length
     ran = ran - (ran%1)
     now = data[ran]
     document.getElementById('question').innerHTML = now[1]
+  }
+  function print2() {
     document.getElementById('answer').innerHTML = now[2] + " / "
     document.getElementById('answer').innerHTML += now[3] + " / "
     document.getElementById('answer').innerHTML += now[4]
+
   }
 
 
@@ -49,7 +55,7 @@
       })
     })
   })
-  console.log('Done3');
+  console.log('Done4');
   </script>
 </body>
 </html>
