@@ -9,8 +9,8 @@
 <body>
   <script>
     fetch('wordSource').then(function(response){
-      var output = ""
       response.text().then(function(text){
+        var output = ""
         items = text.split('\n')
         for (var i in items) {
           item = i.split('\t')
@@ -19,9 +19,9 @@
           }
           output += "\n"
         }
+        document.querySelector('body').innerHTML = output
+        console.log("End")
       })
-      document.querySelector('body').innerHTML = output
-      console.log("End")
     })
   </script>
 </body>
