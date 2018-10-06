@@ -9,8 +9,10 @@
 <body>
   <script>
   var output = ""
+  var str = ""
   fetch('wordSource').then(function(response){
     response.text().then(function(text){
+      str = text
       items = text.split('\n')
       for (var i in items) {
         item = i.split('\t')
