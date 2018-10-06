@@ -12,13 +12,22 @@
     button {
       font-size:20px;
     }
+    #next {
+      font-size:100px;
+      
+    }
   </style>
 
 </head>
 <body>
  
   <p id="question"></p><br><br><br><br>
-  <p id="answer"></p><br><br> <br><button type="button" name="button" onclick="print()">Next</button><br>
+  <p id="answer"></p><br><br> <br>
+  <p id="next" onclick="next()">NEXT</p>
+  
+  
+  
+  <button type="button" name="button" onclick="print()">Next</button><br>
   <button type="button" name="button" onclick="print2()">Answer</button>
   <script>
   var ran = 0
@@ -28,12 +37,25 @@
     ran = ran - (ran%1)
     now = data[ran]
     document.getElementById('question').innerHTML = now[1]
+    document.getElementById('answer').innerHTML = ""
   }
   function print2() {
     document.getElementById('answer').innerHTML = now[2] + " / "
     document.getElementById('answer').innerHTML += now[3] + " / "
     document.getElementById('answer').innerHTML += now[4]
 
+  }
+  switch = 0
+  function next() {
+    if (switch==0) {
+      print()
+      switch=1
+      document.getElementById('next').innerHTML = "ANSWER"
+    } else {
+      print2()
+      switch=0
+      document.getElementById('next').innerHTML = "NEXT"
+    }
   }
 
 
