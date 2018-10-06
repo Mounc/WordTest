@@ -27,8 +27,6 @@
 
 
 
-  <button type="button" name="button" onclick="print1()">Next</button><br>
-  <button type="button" name="button" onclick="print2()">Answer</button>
   <script>
   document.getElementById('next').addEventListener("click", next);
   var ran = 0
@@ -45,15 +43,15 @@
     document.getElementById('answer').innerHTML += now[3] + " / "
     document.getElementById('answer').innerHTML += now[4]
   }
-  switch = 0
+  var s = 0
   function next() {
-    if (switch==0) {
+    if (s==0) {
       print1()
-      switch=1
+      s=1
       document.getElementById('next').innerHTML = "ANSWER"
     } else {
       print2()
-      switch=0
+      s=0
       document.getElementById('next').innerHTML = "NEXT"
     }
   }
