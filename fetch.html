@@ -8,21 +8,21 @@
 </head>
 <body>
   <script>
-    fetch('wordSource').then(function(response){
-      response.text().then(function(text){
-        var output = ""
-        items = text.split('\n')
-        for (var i in items) {
-          item = i.split('\t')
-          for (var x in item) {
-            output += x + "&nbsp"
-          }
-          output += "<br />"
+  var output = ""
+  fetch('wordSource').then(function(response){
+    response.text().then(function(text){
+      items = text.split('\n')
+      for (var i in items) {
+        item = i.split('\t')
+        for (var x in item) {
+          output += x + "&nbsp"
         }
-        document.querySelector('body').innerHTML = output
-        console.log("End")
-      })
+        output += "<br />"
+      }
+      document.querySelector('body').innerHTML = output
+      console.log("End")
     })
+  })
   </script>
 </body>
 </html>
