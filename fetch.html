@@ -14,12 +14,13 @@
     response.text().then(function(text){
       str = text
       items = text.split('\n')
-      for (var i in items) {
+      items.forEach((i)=>{
         item = i.split('\t')
-        for (var x in item) {
+        item.forEach((x)=>{
           output += x + "&nbsp"
-        }
+        })
         output += "<br />"
+      }) {
       }
       document.querySelector('body').innerHTML = output
       console.log("End")
