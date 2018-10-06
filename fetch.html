@@ -10,20 +10,20 @@
   <script>
   var output = ""
   var str = ""
-  data = []
+  var data = []
   fetch('wordSource').then(function(response){
     response.text().then(function(text){
       str = text
       items = text.split('\n')
       items.forEach((i)=>{
-        aData = []
+        var aData = []
         item = i.split('\t')
         item.forEach((x)=>{
           output += x + "&nbsp"
-          aData.append(x)
+          aData.push(x)
         })
         output += "<br />"
-        data.append(adata)
+        data.push(adata)
       })
     })
   })
