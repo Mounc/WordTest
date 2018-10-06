@@ -20,10 +20,10 @@
 
 </head>
 <body>
-
-  <p id="question"></p><br><br><br><br>
-  <p id="answer"></p><br><br> <br>
-  <p id="next" >NEXT</p>
+  <p id="number"></p>
+  <p id="question"></p><br><br>
+  <p id="answer"></p><br>
+  <p id="next" onclick="next()">NEXT</p>
 
 
 
@@ -35,6 +35,7 @@
     ran = (Math.random()*10000)%data.length
     ran = ran - (ran%1)
     now = data[ran]
+    document.getElementById('number').innerHTML = ran
     document.getElementById('question').innerHTML = now[1]
     document.getElementById('answer').innerHTML = " "
   }
