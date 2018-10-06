@@ -9,12 +9,17 @@
 <body>
   <script>
     fetch('wordSource').then(function(response){
+      output = ""
       response.text().then(function(text){
         item = text.split('\n')
         for (var i in item) {
-          document.querySelector('body').innerHTML += i + "\n"
+          for (var x in i) {
+            output += i + "\t"
+          }
+          output += "\n"
         }
       })
+      document.querySelector('body').innerHTML = output
     })
   </script>
 </body>
