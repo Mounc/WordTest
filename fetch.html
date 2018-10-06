@@ -18,6 +18,7 @@
   <script>
   function print() {
     var ran = (Math.random()*10000)%data.length
+    ran = ran - (ran%1)
     now = data[ran]
     document.getElementById('question').InnerHTML = now[1]
     document.getElementById('answer').InnerHTML = now[2] + " / "
