@@ -35,6 +35,9 @@
   var ran = 0
   var now
   function print1() {
+    if (data.length<2) {
+      load()
+    }
     ran = (Math.random()*10000)%data.length
     ran = ran - (ran%1)
     now = data[ran]
@@ -63,26 +66,30 @@
   var output = ""
   var str = ""
   var data = []
-  fetch('wordSource').then(function(response){
-    response.text().then(function(text){
-      str = text
-      items = text.split('\n')
-      items.forEach((i)=>{
-        var aData = []
-        item = i.split('\t')
-        item.forEach((x)=>{
-          output += x + "&nbsp"
-          aData.push(x)
+
+  function load() {
+    fetch('wordSource').then(function(response){
+      response.text().then(function(text){
+        str = text
+        items = text.split('\n')
+        items.forEach((i)=>{
+          var aData = []
+          item = i.split('\t')
+          item.forEach((x)=>{
+            output += x + "&nbsp"
+            aData.push(x)
+          })
+          output += "<br />"
+          data.push(aData.sclice())
+          data.push(aData.sclice())
+          data.push(aData.sclice())
+          document.getElementById('question').innerHTML = "Click the Start to get a Question."
         })
-        output += "<br />"
-        data.push(aData.sclice())
-        data.push(aData.sclice())
-        data.push(aData.sclice())
-        document.getElementById('question').innerHTML = "Click the Start to get a Question."
       })
     })
-  })
-  console.log('Done4');
+    console.log('Done4');
+  }
+  load()
   </script>
 </body>
 </html>
