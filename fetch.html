@@ -20,10 +20,10 @@
     var ran = (Math.random()*10000)%data.length
     ran = ran - (ran%1)
     now = data[ran]
-    document.getElementById('question').InnerHTML = now[1]
-    document.getElementById('answer').InnerHTML = now[2] + " / "
-    document.getElementById('answer').InnerHTML += now[3] + " / "
-    document.getElementById('answer').InnerHTML += now[4]
+    document.getElementById('question').innerHTML = now[1]
+    document.getElementById('answer').innerHTML = now[2] + " / "
+    document.getElementById('answer').innerHTML += now[3] + " / "
+    document.getElementById('answer').innerHTML += now[4]
   }
 
 
@@ -48,7 +48,7 @@
       })
     })
   })
-  console.log('Done');
+  console.log('Done2');
   </script>
 </body>
 </html>
